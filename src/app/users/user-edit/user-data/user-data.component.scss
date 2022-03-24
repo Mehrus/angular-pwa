@@ -1,0 +1,155 @@
+.mat-tab-group {
+    width: 630px;
+    height: 929px;
+    border: 1px solid #dbdde0;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    &::ng-deep {
+        .mat-tab-label {
+            opacity: 1;
+            &.mat-tab-label-active {
+                .mat-tab-label-content {
+                    font-weight: 500;
+                }
+            }
+            .mat-tab-label-content {
+                font-family: "rubik";
+                font-weight: 400;
+                color: #252629;
+            }
+        }
+        .mat-ink-bar {
+            background-color: #5e92fc;
+            height: 3px;
+        }
+    }
+}
+
+
+.tab-content {
+    padding: 24px 16px 0;
+}
+
+h2 {
+    font-size: 16px;
+    color: #325395;
+    margin-top: 0;
+    margin-bottom: 27px;
+    font-weight: 400;
+}
+
+.profile-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dbdde0;
+    align-items: flex-end;
+    padding: 0 16px 10px;
+
+    .left-side {
+        width: calc(50% - 20px);
+    }
+    .right-side {
+        width: calc(50% - 20px);
+    }
+    .input-wrap {
+        width: 100%;
+    }
+}
+
+.contact-info-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.input-wrap {
+    margin-bottom: 12px;
+    width: calc(50% - 20px);
+}
+
+.datepicker {
+    position: relative;
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        right: 11px;
+        pointer-events: none;
+    }
+    &::ng-deep {
+        mat-datepicker-toggle {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+label {
+    display: block;
+    font-size: 11px;
+    color: #252629;
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+input {
+    color: #252629;
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px solid #ced3db;
+    padding: 0 10px;
+    outline: none;
+}
+
+.upload-image {
+    margin-bottom: 15px;
+    position: relative;
+    input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+}
+
+.drag-and-drop {
+    height: 120px;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #dbdde0;
+    text-align: center;
+    padding-top: 28px;
+    &.dragging {
+        border: 1px dashed #dbdde0;
+    }
+    img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 10px;
+    }
+}
+
+.drag-and-drop-title {
+    font-weight: 500;
+    color: #5e92fc;
+    margin-bottom: 5px;
+}
+
+.drag-and-drop-desc {
+    font-size: 11px;
+    color: #9b9fa8;
+}
