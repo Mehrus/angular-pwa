@@ -1,0 +1,10 @@
+a {
+    display: block;
+    text-decoration: none;
+    color: #6a6d75;
+    padding: 13px 0;
+    white-space: nowrap;
+    &.active {
+        color: #5e92fc;
+    }
+}

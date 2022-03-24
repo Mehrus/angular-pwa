@@ -11,6 +11,19 @@ body {
     color: #252629;
 }
 
+.wrapper {
+    overflow: hidden;
+    display: flex;
+}
+
+main {
+    width: calc(100% - 88px);
+}
+
+.page {
+    padding: 27px 25px 0 26px;
+}
+
 @font-face {
     font-family: "rubik";
     src: url(assets/Fonts/Rubik/Rubik-Light.ttf) format("truetype");

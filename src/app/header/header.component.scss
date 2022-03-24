@@ -1,4 +1,4 @@
-@import '../../../assets/css/mixins/mixins.scss';
+@import '../../assets/css/mixins/mixins.scss';
 
 header {
     width: 88px;
@@ -23,6 +23,9 @@ header {
         .date {
             opacity: 1;
             pointer-events: all;
+        }
+        .header-bottom {
+            opacity: 1;
         }
     }
 }
@@ -100,4 +103,6 @@ header {
     background-color: #f3f4f5;
     border-top: 1px solid #dbdde0;
     border-bottom: 1px solid #dbdde0;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
 }
