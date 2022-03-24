@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEditComponent implements OnInit {
 
+  firstName: string = '';
+  lastName: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+    this.firstName = 'Hugh';
+    this.lastName = 'Jackman';
+  }
+
+  getFullname() {
+    return `${this.firstName} ${this.lastName}`;
   }
 
 }

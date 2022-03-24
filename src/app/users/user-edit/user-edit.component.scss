@@ -1,0 +1,24 @@
+.user-edit-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumbs {
+    margin-bottom: 1px;
+}
+
+.user-fullname {
+    font-size: 22px;
+    color: #325395;
+}
+
+.buttons {
+    margin-right: 12px;
+    app-primary-button {
+        margin-left: 33px;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}

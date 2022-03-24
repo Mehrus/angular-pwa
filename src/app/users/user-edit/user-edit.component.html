@@ -1,1 +1,12 @@
-<p>user-edit works!</p>
+<div class="user-edit-top">
+  <div class="user-breadcrumbs-fullname">
+    <div class="breadcrumbs">Users / Edit User</div>
+    <div class="user-fullname">{{ getFullname() }}</div>
+  </div>
+  <div class="buttons">
+    <app-primary-button [color]="'red-color'" [buttonText]="'Delete'"></app-primary-button>
+    <app-primary-button [color]="'faded-blue-color'" [buttonText]="'Block'"></app-primary-button>
+    <app-primary-button [color]="'orange-color'" [buttonText]="'Set Password'"></app-primary-button>
+    <app-primary-button [color]="'blue-color'" [buttonText]="'Save'"></app-primary-button>
+  </div>
+</div>
