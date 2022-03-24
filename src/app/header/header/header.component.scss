@@ -1,0 +1,103 @@
+@import '../../../assets/css/mixins/mixins.scss';
+
+header {
+    width: 88px;
+    height: 100vh;
+    border-top: 1px solid #dbdde0;
+    border-right: 1px solid #dbdde0;
+    background-color: #ffffff;
+    transition: width .3s ease-in-out;
+    overflow: hidden;
+
+    &.active {
+        width: 276px;
+        .burger-button {
+            div {
+                &:nth-child(3) {
+                    &::before {
+                        transform: scale(1,1);
+                    }
+                }
+            }
+        }
+        .date {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.header-top {
+    padding: 25px 34px 0 31px;
+}
+
+.burger-button {
+    width: 20px;
+    height: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    display: block;
+    margin-left: 3px;
+
+    div {
+        width: 20px;
+        height: 2px;
+        background-color: #6e7075;
+        position: absolute;
+        top: 0;
+        &:nth-child(2) {
+            top: 6px;
+        }
+        &:nth-child(3) {
+            top: 12px;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                transform: scale(0,1);
+                transition: transform .3s ease-in-out;
+                transform-origin: left top;
+                background-color: #fabb2b;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+.date {
+    margin-top: 54px;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    pointer-events: none;
+}
+
+.day {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #9b9fa8;
+}
+
+.day-month {
+    font-size: 26px;
+    margin-bottom: 8px;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+.year {
+    font-size: 14px;
+    color: #9b9fa8;
+}
+
+.header-bottom {
+    margin-top: 17px;
+    padding: 18px 33px 37px 33px;
+    background-color: #f3f4f5;
+    border-top: 1px solid #dbdde0;
+    border-bottom: 1px solid #dbdde0;
+}

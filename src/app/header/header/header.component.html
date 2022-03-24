@@ -1,0 +1,16 @@
+<header [class.active]="isMenuOpen">
+    <div class="header-top">
+        <button type="button" class="burger-button" (click)="toggleBurgerBtn()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </button>
+        
+        <div class="date">
+            <div class="day">{{ currentDate | date:'EEEE'}}</div>
+            <div class="day-month">{{ currentDate | date:'dd LLLL'}}</div>
+            <div class="year">{{ currentDate | date:'y' }}</div>
+        </div>
+    </div>
+    <div class="header-bottom"></div>
+</header>
