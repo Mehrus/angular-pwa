@@ -28,7 +28,18 @@
           <div class="form-label">Object</div>
           <div class="form-label">Action</div>
         </div>
-        <input type="text" class="add-object">
+        <input type="text" class="add-object" placeholder="Add object +">
+        <div class="objects">
+            <div class="object" *ngFor="let object of objectsArray">
+                <div class="object-name">{{ object.name }}</div>
+                <div class="permissions">
+                    <button type="button" class="permission-button btn-green">Create</button>
+                    <button type="button" class="permission-button btn-blue">Read</button>
+                    <button type="button" class="permission-button btn-yellow">Update</button>
+                    <button type="button" class="permission-button btn-red">Delete</button>
+                </div>
+            </div>
+        </div>
       </form>
     </div>
   </mat-tab>

@@ -1,13 +1,16 @@
+@import '../../../../assets/css/mixins/mixins.scss';
+
 .mat-tab-group {
     width: 946px;
     height: 929px;
     border: 1px solid #dbdde0;
     border-radius: 2px;
     margin-bottom: 20px;
+    font-family: "rubik";
+
     &::ng-deep {
         .mat-tab-label {
             opacity: 1;
-            font-family: "rubik";
             font-weight: 400;
             color: #252629;
             &.mat-tab-label-active {
@@ -155,4 +158,70 @@
     outline: none;
     padding-left: 28px;
     font-family: 'rubik';
+}
+
+.objects {
+    
+    .object {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #dbdde0;
+        padding-left: 60px;
+    }
+    .object-name {
+        padding: 16px 0 16px 0;
+        font-weight: 500;
+        width: 50%;
+    }
+}
+
+.permissions {
+    display: flex;
+}
+
+.permission-button {
+    padding: 7px 21px 8px 20px;
+    border-radius: 2px;
+    fill: #dbdde0;
+    border: none;
+    border-radius: 2px;
+    background-color: #dbdde0;
+    margin-left: 8px;
+    width: 50%;
+    font-family: 'rubik';
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+
+    &:first-child {
+        margin-left: 0;
+    }
+    &.active {
+        &.btn-green {
+            background-color: rgba(#68bb4b, .32);
+        }
+        &.btn-blue {
+            background-color: rgba(#5e92fc, .32);
+        }
+        &.btn-yellow {
+            background-color: rgba(#fabb2b, .32);
+        }
+        &.btn-red {
+            background-color: rgba(#e5322c, .32);
+        }
+    }
+    @include hover {
+        &.btn-green {
+            background-color: rgba(#68bb4b, .32);
+        }
+        &.btn-blue {
+            background-color: rgba(#5e92fc, .32);
+        }
+        &.btn-yellow {
+            background-color: rgba(#fabb2b, .32);
+        }
+        &.btn-red {
+            background-color: rgba(#e5322c, .32);
+        }
+    }
 }
