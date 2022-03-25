@@ -1,71 +1,87 @@
 <mat-tab-group animationDuration="0ms">
-    <mat-tab label="Statistics">
-        <form class="tab-content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-            <h2>Personal Data</h2>
-              <div class="profile-form-group">
-                <div class="left-side">
-                  <div class="input-wrap">
-                    <label for="first-name">First Name: </label>
-                    <input id="first-name" type="text" formControlName="firstName" />
-                  </div>
-            
-                  <div class="input-wrap">
-                    <label for="last-name">Last Name: </label>
-                    <input id="last-name" type="text" formControlName="lastName" />
-                  </div>
-            
-                  <div class="input-wrap">
-                    <label for="birthday">Birthday: </label>
-                    <div class="datepicker">
-                        <input id="birthday" type="text" formControlName="birthday" [matDatepicker]="picker" />
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                        <img src="assets/img/Icons_calendar_ico.svg" alt="Calendar">
-                    </div>
-                  </div>
-                </div>
-                <div class="right-side">
-                  <div class="upload-image">
-                    <input id="upload-image" type="file" formControlName="uploadImage" (change)="getFile($event)" (dragenter)="onDragEnter()" (dragleave)="onDragLeave()" />
-                    <div class="drag-and-drop" [class.dragging]="dragging">
-                        <img src="assets/img/drag-and-drop.svg" alt="Drag and drop">
-                        <div class="drag-and-drop-title">Upload Photo</div>
-                        <div class="drag-and-drop-desc">Drag and Drop photo or select from files</div>
-                    </div>
-                  </div>
-                  <div class="input-wrap">
-                    <label for="citizenship">Citizenship: </label>
-                    <input id="citizenship" type="text" formControlName="citizenship" />
-                  </div>
-                </div>
-              </div>
-            
-              <h2>Contact Information</h2>
-              <div class="contact-info-group">
-                <div class="input-wrap">
-                  <label for="instagram">Instagram: </label>
-                  <input id="instagram" type="text" formControlName="instagram" />
-                </div>
-                <div class="input-wrap">
-                  <label for="email">Email: </label>
-                  <input id="email" type="text" formControlName="email" />
-                </div>
-                <div class="input-wrap">
-                  <label for="twitter">Twitter: </label>
-                  <input id="twitter" type="text" formControlName="twitter" />
-                </div>
-                <div class="input-wrap">
-                  <label for="facebook">Facebook: </label>
-                  <input id="facebook" type="text" formControlName="facebook" />
-                </div>
-              </div>
-            </form>
-    </mat-tab>
-    <mat-tab label="Settings">
-        <div class="tab-content">
-            Settings content
+  <mat-tab label="Statistics">
+    <form class="tab-content" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <h2>Personal Data</h2>
+      <div class="profile-form-group">
+        <div class="left-side">
+          <div class="input-wrap">
+            <label for="first-name">First Name: </label>
+            <input id="first-name" type="text" formControlName="firstName" />
+          </div>
+
+          <div class="input-wrap">
+            <label for="last-name">Last Name: </label>
+            <input id="last-name" type="text" formControlName="lastName" />
+          </div>
+
+          <div class="input-wrap">
+            <label for="birthday">Birthday: </label>
+            <div class="datepicker">
+              <input
+                id="birthday"
+                type="text"
+                formControlName="birthday"
+                [matDatepicker]="picker"
+              />
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <img src="assets/img/Icons_calendar_ico.svg" alt="Calendar" />
+            </div>
+          </div>
         </div>
-    </mat-tab>
+        <div class="right-side">
+          <div class="upload-image">
+            <input
+              id="upload-image"
+              type="file"
+              formControlName="uploadImage"
+              (change)="getFile($event)"
+              (dragenter)="onDragEnter()"
+              (dragleave)="onDragLeave()"
+              *ngIf="!uploadOverview"
+            />
+            <div class="drag-and-drop" [class.dragging]="dragging">
+              <img class="icon" src="assets/img/drag-and-drop.svg" alt="Drag and drop" />
+              <div class="drag-and-drop-title">Upload Photo</div>
+              <div class="drag-and-drop-desc">
+                Drag and Drop photo or select from files
+              </div>
+              <img [src]="uploadOverview" class="drag-and-drop-overview-image" *ngIf="uploadOverview">
+            </div>
+            <div class="cross" *ngIf="uploadOverview" (click)="clearFile()"></div>
+          </div>
+          <div class="input-wrap">
+            <label for="citizenship">Citizenship: </label>
+            <input id="citizenship" type="text" formControlName="citizenship" />
+          </div>
+        </div>
+      </div>
 
-  </mat-tab-group>
-
+      <h2>Contact Information</h2>
+      <div class="contact-info-group">
+        <div class="input-wrap">
+          <label for="instagram">Instagram: </label>
+          <input id="instagram" type="text" formControlName="instagram" />
+        </div>
+        <div class="input-wrap">
+          <label for="email">Email: </label>
+          <input id="email" type="text" formControlName="email" />
+        </div>
+        <div class="input-wrap">
+          <label for="twitter">Twitter: </label>
+          <input id="twitter" type="text" formControlName="twitter" />
+        </div>
+        <div class="input-wrap">
+          <label for="facebook">Facebook: </label>
+          <input id="facebook" type="text" formControlName="facebook" />
+        </div>
+      </div>
+    </form>
+  </mat-tab>
+  <mat-tab label="Settings">
+    <div class="tab-content">Settings content</div>
+  </mat-tab>
+</mat-tab-group>

@@ -7,10 +7,10 @@
     <app-primary-button class="delete" [color]="'red-color'" [buttonText]="'Delete'"></app-primary-button>
     <app-primary-button [color]="'faded-blue-color'" [buttonText]="'Block'" (click)="openDialog()"></app-primary-button>
     <app-primary-button [color]="'orange-color'" [buttonText]="'Set Password'"></app-primary-button>
-    <app-primary-button [color]="'blue-color'" [buttonText]="'Save'"></app-primary-button>
+    <app-primary-button [color]="'blue-color'" [buttonText]="'Save'" (click)="emitEventToChild()"></app-primary-button>
   </div>
 </div>
 
 <div class="user-edit-bottom">
-    <app-user-data></app-user-data>
+    <app-user-data [events]="eventsSubject.asObservable()" (formData)="submitUserData($event)"></app-user-data>
 </div>

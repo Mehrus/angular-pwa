@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnDestroy,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { Observable, Subscription } from 'rxjs';
 @Component({
   selector: 'app-user-data',
   templateUrl: './user-data.component.html',
-  styleUrls: ['./user-data.component.scss']
+  styleUrls: ['./user-data.component.scss'],
 })
-export class UserDataComponent implements OnInit {
-
+export class UserDataComponent implements OnInit, OnDestroy {
   file: any;
+  uploadOverview: any;
   dragging = false;
+  eventsSubscription!: Subscription;
+  @Input() events!: Observable<void>;
+  @Output() formData = new EventEmitter();
 
   profileForm = new FormGroup({
     firstName: new FormControl('Hugh'),
@@ -23,17 +33,32 @@ export class UserDataComponent implements OnInit {
     facebook: new FormControl('@HughJackman'),
   });
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    // this.profileForm.valueChanges.subscribe(value => {
+    //   console.log(value);
+    // })
+    this.eventsSubscription = this.events.subscribe(() => this.onSubmit());
   }
 
   onSubmit() {
+    this.formData.emit({ form: this.profileForm.value, avatar: this.file });
+  }
 
+  clearFile() {
+    this.file = '';
+    this.uploadOverview = '';
   }
 
   getFile(e: any) {
-    this.file = e.target.files[0];
+    this.file = e;
+
+    var reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.uploadOverview = event.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
   }
 
   onDragEnter() {
@@ -43,5 +68,7 @@ export class UserDataComponent implements OnInit {
   onDragLeave() {
     this.dragging = false;
   }
-
+  ngOnDestroy() {
+    this.eventsSubscription.unsubscribe();
+  }
 }
