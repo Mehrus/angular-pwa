@@ -20,6 +20,9 @@ header {
                 }
             }
         }
+        .header-content {
+            width: 276px;
+        }
         .date {
             opacity: 1;
             pointer-events: all;
@@ -28,6 +31,18 @@ header {
             opacity: 1;
         }
     }
+}
+
+.header-content {
+    width: 88px;
+    height: 100vh;
+    border-right: 1px solid #dbdde0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width .3s ease-in-out;
+    overflow: hidden;
 }
 
 .header-top {
@@ -105,4 +120,16 @@ header {
     border-bottom: 1px solid #dbdde0;
     opacity: 0;
     transition: opacity .3s ease-in-out;
+}
+
+.users-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    .label {
+        color: #5e92fc;
+    }
+}
+.users-label-image {
+    margin-right: 13px;
 }

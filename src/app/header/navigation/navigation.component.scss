@@ -1,10 +1,39 @@
+@import '../../../assets/css/mixins/mixins.scss';
+
+nav {
+    margin-left: 36px;
+}
+
 a {
     display: block;
     text-decoration: none;
     color: #6a6d75;
-    padding: 13px 0;
+    padding: 13px 0 13px 14px;
     white-space: nowrap;
+    position: relative;
+    transition: color .3s ease-in-out;
+    &::before {
+        position: absolute;
+        content: '';
+        width: 4px;
+        height: 4px;
+        background-color: #6a6d75;
+        top: 15px;
+        left: 0;
+    }
     &.active {
         color: #5e92fc;
+        &::before {
+            background-color: #5e92fc;
+        }
+    }
+    @include hover {
+        color: #5e92fc;
+        &::before {
+            background-color: #5e92fc;
+        }
+    }
+    &.settings {
+        font-weight: 500;
     }
 }

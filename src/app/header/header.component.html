@@ -1,18 +1,24 @@
 <header [class.active]="isMenuOpen">
-    <div class="header-top">
-        <button type="button" class="burger-button" (click)="toggleBurgerBtn()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </button>
-        
-        <div class="date">
-            <div class="day">{{ currentDate | date:'EEEE'}}</div>
-            <div class="day-month">{{ currentDate | date:'dd LLLL'}}</div>
-            <div class="year">{{ currentDate | date:'y' }}</div>
+    <div class="header-content">
+        <div class="header-top">
+            <button type="button" class="burger-button" (click)="toggleBurgerBtn()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            
+            <div class="date">
+                <div class="day">{{ currentDate | date:'EEEE'}}</div>
+                <div class="day-month">{{ currentDate | date:'dd LLLL'}}</div>
+                <div class="year">{{ currentDate | date:'y' }}</div>
+            </div>
         </div>
-    </div>
-    <div class="header-bottom">
-        <app-navigation></app-navigation>
+        <div class="header-bottom">
+            <div class="users-label">
+                <img class="users-label-image" src="assets/img/Icons_warsztat_ico.svg" alt="Gear icon">
+                <div class="label">Users</div>
+            </div>
+            <app-navigation></app-navigation>
+        </div>
     </div>
 </header>
