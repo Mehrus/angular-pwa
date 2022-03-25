@@ -53,4 +53,7 @@ export class UserRoleComponent implements OnInit {
       })
     );
   }
+  activeToggle(event: any) {
+    console.log(event);
+  }
 }

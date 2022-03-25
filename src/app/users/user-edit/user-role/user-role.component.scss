@@ -210,18 +210,4 @@
             background-color: rgba(#e5322c, .32);
         }
     }
-    @include hover {
-        &.btn-green {
-            background-color: rgba(#68bb4b, .32);
-        }
-        &.btn-blue {
-            background-color: rgba(#5e92fc, .32);
-        }
-        &.btn-yellow {
-            background-color: rgba(#fabb2b, .32);
-        }
-        &.btn-red {
-            background-color: rgba(#e5322c, .32);
-        }
-    }
 }

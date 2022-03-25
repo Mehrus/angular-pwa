@@ -37,16 +37,16 @@
             >
               <div class="object-name">{{ object.value.name }}</div>
               <div class="permissions">
-                <button type="button" class="permission-button btn-green" [class.active]="object.value.permissions.create">
+                <button type="button" class="permission-button btn-green" [class.active]="object.value.permissions.create" (click)="object.value.permissions.create = !object.value.permissions.create">
                   Create
                 </button>
-                <button type="button" class="permission-button btn-blue" [class.active]="object.value.permissions.read">
+                <button type="button" class="permission-button btn-blue" [class.active]="object.value.permissions.read" (click)="object.value.permissions.read = !object.value.permissions.read">
                   Read
                 </button>
-                <button type="button" class="permission-button btn-yellow" [class.active]="object.value.permissions.update">
+                <button type="button" class="permission-button btn-yellow" [class.active]="object.value.permissions.update" (click)="object.value.permissions.update = !object.value.permissions.update">
                   Update
                 </button>
-                <button type="button" class="permission-button btn-red" [class.active]="object.value.permissions.delete">
+                <button type="button" class="permission-button btn-red" [class.active]="object.value.permissions.delete" (click)="object.value.permissions.delete = !object.value.permissions.delete">
                   Delete
                 </button>
               </div>
