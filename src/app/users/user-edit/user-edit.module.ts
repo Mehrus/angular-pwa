@@ -6,6 +6,7 @@ import { UserEditComponent } from './user-edit.component';
 import { PrimaryButtonComponent } from 'src/app/parts/primary-button/primary-button.component';
 import { UserRoleComponent } from './user-role/user-role.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MatTabsModule } from '@angular/material/tabs';
   imports: [
     CommonModule,
     UserEditRoutingModule,
-    MatTabsModule
+    MatTabsModule,
+    ReactiveFormsModule 
   ]
 })
 export class UserEditModule { }
