@@ -1,0 +1,35 @@
+<mat-tab-group animationDuration="0ms" [selectedIndex]="1">
+  <mat-tab label="Logs" #tab [disabled]="!tab.isActive">
+    <div class="tab-content">Logs content</div>
+  </mat-tab>
+  <mat-tab label="Permissions">
+    <div class="tab-content">
+      <div class="top-content">
+        <div class="user-role">Role: <span>Performer</span></div>
+        <div class="select-wrap">
+          <div class="label">Assign role</div>
+          <div class="select-container">
+            <div class="selected-items">
+              <div class="selected-item">
+                <div class="selected-name">Performer</div>
+                <div class="cross"></div>
+              </div>
+            </div>
+            <img
+              class="arrow-down"
+              src="assets/img/Icon_Form_Arrow_down_ico.svg"
+              alt="Down arrow"
+            />
+          </div>
+        </div>
+      </div>
+      <form class="permission-form">
+        <div class="form-labels">
+          <div class="form-label">Object</div>
+          <div class="form-label">Action</div>
+        </div>
+        <input type="text" class="add-object">
+      </form>
+    </div>
+  </mat-tab>
+</mat-tab-group>
