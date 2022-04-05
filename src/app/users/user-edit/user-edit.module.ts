@@ -11,6 +11,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MatTabsModule } from '@angular/material/tabs';
+import { UserRoleComponent } from './user-role/user-role.component';
+import { FormsModule } from '@angular/forms';
 
 export const MY_FORMATS = {
   parse: {
@@ -30,7 +32,7 @@ export const MY_FORMATS = {
     MaterialDialog,
     PrimaryButtonComponent,
     UserDataComponent,
-    //UserRoleComponent,
+    UserRoleComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ export const MY_FORMATS = {
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule
   ],
   providers: [
     {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},

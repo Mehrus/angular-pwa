@@ -12,5 +12,6 @@
 </div>
 
 <div class="user-edit-bottom">
-    <app-user-data [events]="eventsSubject.asObservable()" (formData)="submitUserData($event)"></app-user-data>
+  <app-user-role></app-user-role>
+  <app-user-data [events]="eventsSubject.asObservable()" (formData)="submitUserData($event)"></app-user-data>
 </div>

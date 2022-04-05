@@ -53,9 +53,27 @@
             </div>
             <div class="cross" *ngIf="uploadOverview" (click)="clearFile()"></div>
           </div>
-          <div class="input-wrap">
-            <label for="citizenship">Citizenship: </label>
-            <input id="citizenship" type="text" formControlName="citizenship" />
+          <div class="select-wrap">
+            <div class="label">Citizenship: </div>
+            <div class="select-container" (click)="openSelect()">
+              <div class="selected-items">
+                <div class="selected-item" *ngFor="let option of optionsAdded">
+                  <div class="selected-name">{{ option }}</div>
+                  <div class="cross" (click)="removeOption($event,option);"></div>
+                </div>
+              </div>
+              <img
+                class="arrow-down"
+                src="assets/img/Icon_Form_Arrow_down_ico.svg"
+                alt="Down arrow"
+              />
+            </div>
+            <div class="select-options" [class.active]="selectOpened">
+              <div class="checkbox-wrap" *ngFor="let option of selectOptions; index as i;">
+                <label for="option_{{i}}">{{option.name}}</label>
+                <input (change)="fieldsChange($event)" value="{{option.name}}" type="checkbox" id="option_{{i}}" [(ngModel)]="option.checked" [ngModelOptions]="{standalone: true}"/>
+              </div>
+            </div>
           </div>
         </div>
       </div>
