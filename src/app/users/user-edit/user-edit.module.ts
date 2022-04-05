@@ -29,7 +29,8 @@ export const MY_FORMATS = {
     UserEditComponent,
     MaterialDialog,
     PrimaryButtonComponent,
-    UserDataComponent
+    UserDataComponent,
+    //UserRoleComponent,
   ],
   imports: [
     CommonModule,
