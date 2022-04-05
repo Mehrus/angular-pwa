@@ -22,3 +22,27 @@
         }
     }
 }
+
+.delete {
+    &::ng-deep {
+        .primary-button {
+            padding-left: 28px;
+            padding-right: 27px;
+        }
+    }
+}
+
+.user-edit-bottom {
+    margin-top: 18px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+app-user-data {
+    width: calc(50% - 9px);
+}
+
+app-user-role {
+    width: calc(50% - 9px);
+}

@@ -1,7 +1,7 @@
 @import '../../../../assets/css/mixins/mixins.scss';
 
 .mat-tab-group {
-    width: 946px;
+    width: 100%;
     height: 929px;
     border: 1px solid #dbdde0;
     border-radius: 2px;
@@ -46,87 +46,15 @@
 }
 
 .user-role {
-    font-size: 18px;
-    color: #325395;
+    font-size: 16px;
+    color: #5e92fc;
+    font-weight: 500;
     span {
-        font-size: 16px;
-        color: #5e92fc;
-        font-weight: 500;
-        margin-left: 7px;
+        font-size: 18px;
+        color: #325395;
+        margin-right: 7px;
         display: inline-block;
-    }
-}
-
-.select-wrap {
-    .select-container {
-        position: relative;
-    }
-    .selected-items {
-        width: 330px;
-        height: 36px;
-        border-radius: 2px;
-        border: 1px solid #ced3db;
-        padding: 5px 9px;
-        cursor: pointer;
-    }
-    .selected-item {
-        width: 122px;
-        height: 24px;
-        border-radius: 2px;
-        background-color: #dbdde0;
-        font-size: 11px;
-        color: #252629;
-        position: relative;
-    }
-    .selected-name {
-        padding: 6px 0 6px 9px;
-        cursor: default;
-    }
-    .cross {
-        width: 12px;
-        height: 12px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        right: 7px;
-        cursor: pointer;
-        &::before {
-            position: absolute;
-            content: "";
-            background-color: #6e7c98;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 12px;
-            width: 1px;
-            margin: auto;
-            transform: rotate(45deg);
-        }
-        &::after {
-            position: absolute;
-            content: "";
-            background-color: #6e7c98;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            height: 12px;
-            width: 1px;
-            margin: auto;
-            transform: rotate(-45deg);
-        }
-    }
-    .arrow-down {
-        width: 11px;
-        height: 7px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 15px;
-        margin: auto 0;
-        pointer-events: none;
+        font-weight: 400;
     }
 }
 
@@ -197,20 +125,6 @@
         margin-left: 0;
     }
     &.active {
-        &.btn-green {
-            background-color: rgba(#68bb4b, .32);
-        }
-        &.btn-blue {
-            background-color: rgba(#5e92fc, .32);
-        }
-        &.btn-yellow {
-            background-color: rgba(#fabb2b, .32);
-        }
-        &.btn-red {
-            background-color: rgba(#e5322c, .32);
-        }
-    }
-    @include hover {
         &.btn-green {
             background-color: rgba(#68bb4b, .32);
         }

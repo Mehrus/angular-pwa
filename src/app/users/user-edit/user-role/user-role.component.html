@@ -5,7 +5,7 @@
   <mat-tab label="Permissions">
     <div class="tab-content">
       <div class="top-content">
-        <div class="user-role">Role: <span>Performer</span></div>
+        <div class="user-role"><span>Role: </span> Performer</div>
         <div class="select-wrap">
           <div class="label">Assign role</div>
           <div class="select-container">
@@ -23,23 +23,35 @@
           </div>
         </div>
       </div>
-      <form class="permission-form">
+      <form [formGroup]="profileForm" class="permission-form">
         <div class="form-labels">
           <div class="form-label">Object</div>
           <div class="form-label">Action</div>
         </div>
-        <input type="text" class="add-object" placeholder="Add object +">
-        <div class="objects">
-            <div class="object" *ngFor="let object of objectsArray">
-                <div class="object-name">{{ object.name }}</div>
-                <div class="permissions">
-                    <button type="button" class="permission-button btn-green">Create</button>
-                    <button type="button" class="permission-button btn-blue">Read</button>
-                    <button type="button" class="permission-button btn-yellow">Update</button>
-                    <button type="button" class="permission-button btn-red">Delete</button>
-                </div>
+        <input type="text" class="add-object" placeholder="Add object +" (keyup.enter)="addObjects($event)" />
+
+        <div class="objects" formArrayName="objects" *ngIf="true">
+            <div
+              class="object"
+              *ngFor="let object of objects.controls; let i = index"
+            >
+              <div class="object-name">{{ object.value.name }}</div>
+              <div class="permissions">
+                <button type="button" class="permission-button btn-green" [class.active]="object.value.permissions.create" (click)="object.value.permissions.create = !object.value.permissions.create">
+                  Create
+                </button>
+                <button type="button" class="permission-button btn-blue" [class.active]="object.value.permissions.read" (click)="object.value.permissions.read = !object.value.permissions.read">
+                  Read
+                </button>
+                <button type="button" class="permission-button btn-yellow" [class.active]="object.value.permissions.update" (click)="object.value.permissions.update = !object.value.permissions.update">
+                  Update
+                </button>
+                <button type="button" class="permission-button btn-red" [class.active]="object.value.permissions.delete" (click)="object.value.permissions.delete = !object.value.permissions.delete">
+                  Delete
+                </button>
+              </div>
             </div>
-        </div>
+          </div>
       </form>
     </div>
   </mat-tab>
