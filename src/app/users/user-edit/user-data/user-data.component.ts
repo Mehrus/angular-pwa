@@ -14,6 +14,9 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./user-data.component.scss'],
 })
 export class UserDataComponent implements OnInit, OnDestroy {
+  dropdownList: any;
+  dropdownSettings: any;
+  
   file: any;
   uploadOverview: any;
   dragging = false;
